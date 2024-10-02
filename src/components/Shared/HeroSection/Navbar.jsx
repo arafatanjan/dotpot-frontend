@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from 'react-router-dom';
 import "./Navbar";
 import logo from "../../../assets/Group 70.png";
 import location from "../../../assets/Link.png";
@@ -95,11 +96,12 @@ const Navbar = () => {
       <img src={Link1} alt="link" style={{ height: "15px" }} />
     </div>
 
-    <div style={{ textAlign: "center", fontSize: "11px" }}>
-  <p style={{ margin: "0" }}>Sign In</p>
-  <p style={{ margin: "0", fontWeight: "bold" }}>Account</p>
-</div>
-
+    <Link style={{ textDecoration: 'none' }} to={`/login`}>
+  <div style={{ textAlign: 'center', fontSize: '11px' }}>
+    <p style={{ margin: '0' }}>Sign In</p>
+    <p style={{ margin: '0', fontWeight: 'bold' }}>Account</p>
+  </div>
+</Link>
   
     <i
       className="fa fa-heart"
