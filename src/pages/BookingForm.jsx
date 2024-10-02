@@ -22,7 +22,7 @@ const BookingForm = () => {
     if (!window.confirm("Are you sure you want to place order?")) {
       return;
     }
-    await fetch(`http://localhost:5000/order`, {
+    await fetch(`https://dotpot-server-ten.vercel.app/order`, {
       method: "POST",
       headers: {
         "Content-type": "application/json",
