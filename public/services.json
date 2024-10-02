@@ -1,0 +1,105 @@
+[
+    {
+        "title": "100 Percent Apple Juice – 64 fl oz Bottle",
+        "price": "$0.50",
+        "oldPrice": "$1.98",
+        "discount": "75%",
+        "imgSrc": "http://localhost:5173/src/assets/e.png",
+        "label": "ORGANIC"
+      },
+      {
+        "title": "Great Value Rising Crust Frozen Pizza, Supreme",
+        "price": "$8.99",
+        "oldPrice": "$9.89",
+        "discount": "11%",
+        "imgSrc": "http://localhost:5173/src/assets/h.png",
+        "label": "COLD SALE"
+      },
+      {
+        "title": "Simply Orange Pulp Free Juice – 52 fl oz",
+        "price": "$2.45",
+        "oldPrice": "$4.13",
+        "discount": "41%",
+        "imgSrc": "http://localhost:5173/src/assets/g.png",
+        "label": "COLD SALE"
+      },
+      {
+        "title": "California Pizza Kitchen Margherita, Crispy Thin Crust",
+        "price": "$11.77",
+        "oldPrice": "$14.77",
+        "discount": "21%",
+        "imgSrc": "http://localhost:5173/src/assets/h.png",
+        "label": "COLD SALE"
+      },
+      {
+        "title": "Cantaloupe Melon Fresh Organic Cut",
+        "price": "$1.25",
+        "oldPrice": "$2.88",
+        "discount": "59%",
+        "imgSrc": "http://localhost:5173/src/assets/i.png",
+        "label": "ORGANIC"
+      },
+      {
+        "title": "Angel Soft Toilet Paper, 9 Mega Rolls",
+        "price": "$14.12",
+        "oldPrice": "$17.12",
+        "discount": "18%",
+        "imgSrc": "http://localhost:5173/src/assets/j.png",
+        "label": "ORGANIC"
+      },
+    
+    {
+        "title": "Marketside Fresh Organic Bananas, Bunch",
+        "price": "$0.89",
+        "oldPrice": "$1.98",
+        "discount": "56%",
+        "imgSrc": "http://localhost:5173/src/assets/o.png",
+        "label": "ORGANIC",
+        "rating": 2
+      },
+      {
+        "title": "Lay's Classic Potato Snack Chips, Party Size, 13 oz Bag",
+        "price": "$1.00",
+        "oldPrice": "$1.98",
+        "discount": "50%",
+        "imgSrc": "http://localhost:5173/src/assets/p.png",
+        "label": "ORGANIC",
+        "rating": 2
+      },
+      {
+        "title": "Great Value Classic Crust Pepperoni Microwave Frozen…",
+        "price": "$1.99",
+        "oldPrice": "$3.99",
+        "discount": "50%",
+        "imgSrc": "http://localhost:5173/src/assets/q.png",
+        "label": "ORGANIC",
+        "rating": 2
+      },
+      {
+        "title": "All Natural 85.15 Ground Beef – 1lb",
+        "price": "$7.75",
+        "oldPrice": "$8.75",
+        "discount": "12%",
+        "imgSrc": "http://localhost:5173/src/assets/r.png",
+        "label": "ORGANIC",
+        "rating": 2
+      },
+      {
+        "title": "ACT Anticavity Fluoride Mouthwash with Zero Alcohol",
+        "price": "$2.33",
+        "oldPrice": "$4.33",
+        "discount": "47%",
+        "imgSrc": "http://localhost:5173/src/assets/s.png",
+        "label": "ORGANIC",
+        "rating": 2
+      },
+      {
+        "title": "FireSmith Flame Grilled Chicken Breast",
+        "price": "$15.91",
+        "oldPrice": "$17.81",
+        "discount": "12%",
+        "imgSrc": "http://localhost:5173/src/assets/t.png",
+        "label": "ORGANIC",
+        "rating": 2
+      }
+  ]
