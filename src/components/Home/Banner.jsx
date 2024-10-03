@@ -1,9 +1,9 @@
 import React from "react";
 
-import b from "../../../assets/d.png";
-import a from "../../../assets/a.png";
-import c from "../../../assets/b.png";
-import d from "../../../assets/c.png";
+import b from "../../assets/d.png";
+import a from "../../assets/a.png";
+import c from "../../assets/b.png";
+import d from "../../assets/c.png";
 
 const featuresData = [
   {

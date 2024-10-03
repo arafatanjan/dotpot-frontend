@@ -1,5 +1,6 @@
-import React from "react";
+import React,  { forwardRef } from 'react';
 import { Link } from 'react-router-dom';
+
 import "./NewArraival.css";
 import e from "../../assets/e.png";
 import f from "../../assets/f.png";
@@ -90,9 +91,11 @@ const promoData = [
   },
 ];
 
-const NewArraival = () => {
+const NewArraival = forwardRef((props, ref) => {
+  
+  // const newArrivalsRef = useRef(null);
   return (
-    <div>
+    <div  ref={ref}>
       <div style={{ display: "flex", gap: "10px" }}>
         <h3>New Arrivals</h3>
         <p style={{ color: "#a19c9c", paddingTop: "5px" }}>
@@ -220,6 +223,7 @@ const NewArraival = () => {
       </div>
     </div>
   );
-};
+}
+);
 
 export default NewArraival;

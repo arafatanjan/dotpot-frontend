@@ -2,7 +2,7 @@ import React from "react";
 // import Navbar from '../Components/home/NavbarPage';
 import { Outlet, useLocation } from "react-router-dom";
 // import Footer from '../Components/home/Footer';
-import Banner from "../components/Shared/HeroSection/Banner";
+// import Banner from "../components/Shared/HeroSection/Banner";
 import Header from "../components/Shared/HeroSection/Header";
 import Navbar from "../components/Shared/HeroSection/Navbar";
 import Topbar from "../components/Shared/HeroSection/Topbar";
