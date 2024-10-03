@@ -116,7 +116,7 @@ const ProductCategory = () => {
           style={{ width: "48%" }}
         />
       </div>
-      {/* <p>Price: ${price[0]} — ${price[1]}</p> */}
+      <p>Price: ${price[0]} — ${price[1]}</p>
       <p>Price:</p>
       <button style={{ padding: "10px", marginTop: "10px", width: "100%" }}>Filter</button>
 

@@ -29,20 +29,20 @@ const Header = () => {
         <div style={{ display: "flex", }}>
       {/* Sidebar */}
 
-      <div style={{ width: "auto", backgroundColor: "#fff", padding: "20px", }}>
+      <div style={{ width: "auto", backgroundColor: "#fff", paddingLeft: "0px", }}>
       <div className="dropdown">
-      <div
+      <p
                   className="dropdown-toggle"
                   onClick={toggleDropdown}
-                  style={{ fontSize: "14px",cursor: 'pointer', fontWeight: '500',border: ".5px solid #c9c6c5", lineHeight: "2" }}
+                  style={{ fontSize: "18px",cursor: 'pointer', fontWeight: '500', lineHeight: "1", whiteSpace: "nowrap" }}
                 >
                   All Categories
-                </div>
+                </p>
                 {/* <ul style={{ listStyleType: "none", border: "2px solid #c9c6c5", padding:'3px' }}> */}
                 {isOpen && (
   <ul
     className="dropdown-menu"
-    style={{ listStyleType: "none", border: "", padding: "0px",fontSize: "14px", width:'120%', margin:'0px' }}
+    style={{ listStyleType: "none", border: "", padding: "0px", width:'110%', margin:'0px',fontSize: "12px"  }}
   >
     {subcategory.map((item) => (
       <li key={item.name} style={{ display: "flex", alignItems: "center", padding: "10px", border: ".5px solid #c9c6c5" }}>
@@ -60,10 +60,10 @@ const Header = () => {
       <div style={{ flexGrow: 1, padding: "20px" }}>
         <nav style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "20px" }}>
           <ul style={{ display: "flex", listStyleType: "none", gap: "15px", margin: 0, padding: 0 }}>
-            <li><Link className="" to={""} style={{textDecoration: 'none' }}>Home</Link></li>
-            <li><Link className="" to={""} style={{ textDecoration: 'none'}}>Shop</Link></li>
-            <li><Link className="" to={""} style={{ textDecoration: 'none'}}>Fruits & Vegetables</Link></li>
-            <li><Link className="" to={""} style={{ textDecoration: 'none'}}>Beverages</Link></li>
+            <li><Link className="" to={"/"} style={{textDecoration: 'none' }}>Home</Link></li>
+            <li><Link className="" to={"/category"} style={{ textDecoration: 'none'}}>Shop</Link></li>
+            <li><Link className="" to={"/category"} style={{ textDecoration: 'none'}}>Fruits & Vegetables</Link></li>
+            <li><Link className="" to={"/category"} style={{ textDecoration: 'none'}}>Beverages</Link></li>
             <li><Link className="" to={""} style={{textDecoration: 'none' }}>Blog</Link></li>
             <li><Link className="" to={""} style={{textDecoration: 'none' }}>Contact</Link></li>
             
