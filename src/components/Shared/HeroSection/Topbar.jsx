@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import './Topbar.css'
 import logo from "../../../assets/Group 70.png";
 import location from "../../../assets/Link.png";
@@ -8,40 +8,60 @@ import Link1 from "../../../assets/Link1.png";
 
 const Topbar = () => {
     const [timeLeft, setTimeLeft] = useState({});
-  const saleEndDate = new Date();
-  saleEndDate.setDate(saleEndDate.getDate() + 47);
+    const [timer, setTimer] = useState();
+    const intervalRef = useRef(null);
+  // const saleEndDate = new Date();
+  // saleEndDate.setDate(saleEndDate.getDate() + 47);
+  
+  const endDate = "21 July 2025 08:20:00 PM"
+  const end = new Date(endDate)
+//console.log(end)
 
   useEffect(() => {
     const countdown = setInterval(() => {
-      const now = new Date().getTime();
-      const distance = saleEndDate - now;
+      // const now = new Date().getTime();
+      // const distance = saleEndDate.getTime() - now;
+       const now = new Date();
+       const distance = (end - now) ;
+//console.log(distance)
 
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor(
-        (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
-      );
-      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+      if (distance >= 0) {
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-      setTimeLeft({ days, hours, minutes, seconds });
+        
 
-      // If the countdown is over, stop the interval
-      if (distance < 0) {
+        setTimeLeft({ days, hours, minutes, seconds });
+      } else {
         clearInterval(countdown);
-        setTimeLeft({});
+        setTimeLeft({}); // 'Sale ended!'
       }
     }, 1000);
 
-    return () => clearInterval(countdown); // Clean up the interval on component unmount
-  }, [saleEndDate]);
+    return () => clearInterval(countdown);
+  }, []);
+
 
     return (
          <div>
-        <div style={{ width: "120%", marginLeft: "-10%", marginRight: "-10%" }}>
+
+        <div style={{ width: "120%", marginLeft: "-10%", marginRight: "-10%", padding:"0 0" }}>
             <div style={styles.container}>
+
         <div style={styles.text}>
-          FREE delivery & 40% Discount for next 3 orders! Place your 1st order
-          in.
+          {/* FREE delivery & 40% Discount for next 3 orders! Place your 1st order
+          in. */}
+          <div class="news-container">
+        <ul>
+            <li>
+            FREE delivery & 40% Discount for next 3 orders! Place your 1st order
+            in.
+            </li>
+        </ul>
+    </div>
+
         </div>
         <div style={styles.timer}>
           {timeLeft.days !== undefined ? (
@@ -96,7 +116,7 @@ const styles = {
       justifyContent: "space-between",
       alignItems: "center",
       backgroundColor: "#6c4bb7", // Hex color close to the one in the image
-      padding: "10px 20px",
+      padding: "10px 110px",
       color: "white",
       fontSize: "12px",
     },
@@ -104,7 +124,8 @@ const styles = {
       fontWeight: "bold",
     },
     timer: {
-      fontFamily: "monospace",
+      fontFamily: "Roboto, sans-serif",
+      fontWeight: "bold",
     },
   };
   
