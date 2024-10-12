@@ -1,5 +1,5 @@
 .news-container {
-    position: fixed;
+    /* position: fixed; */
     top: 8px;
     left: 0;
     right: 0;
@@ -13,13 +13,13 @@
     list-style: none;
     margin: 0;
     width: '10%';
-    animation: scroll 5s infinite linear;
+    animation: scroll 3s infinite linear;
 }
 
 .news-container ul li {
     /* white-space: nowrap; */
     padding: 10px 0px;
-    color: whitesmoke;
+    color: white;
     position: relative;
 }
 
@@ -43,6 +43,6 @@
     }
 
     to {
-        transform: translateX(-200px);
+        transform: translateX(0);
     }
 }

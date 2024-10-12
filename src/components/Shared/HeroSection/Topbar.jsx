@@ -53,7 +53,7 @@ const Topbar = () => {
         <div style={styles.text}>
           {/* FREE delivery & 40% Discount for next 3 orders! Place your 1st order
           in. */}
-          <div class="news-container">
+          <div className="news-container">
         <ul>
             <li>
             FREE delivery & 40% Discount for next 3 orders! Place your 1st order
@@ -115,8 +115,8 @@ const styles = {
       display: "flex",
       justifyContent: "space-between",
       alignItems: "center",
-      backgroundColor: "#6c4bb7", // Hex color close to the one in the image
-      padding: "10px 110px",
+      backgroundColor: "#6c4bb7", 
+      padding: "0px 110px",
       color: "white",
       fontSize: "12px",
     },

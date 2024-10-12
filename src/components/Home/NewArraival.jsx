@@ -1,5 +1,6 @@
-import React,  { forwardRef } from 'react';
+import React,  { forwardRef, useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { SearchContext } from '../../hooks/SearchContext';
 
 import "./NewArraival.css";
 import e from "../../assets/e.png";
@@ -13,87 +14,19 @@ import l from "../../assets/l.png";
 import m from "../../assets/m.png";
 import n from "../../assets/n.png";
 
- const products = [
-  {
-    title: "100 Percent Apple Juice – 64 fl oz Bottle",
-    price: "$0.50",
-    oldPrice: "$1.98",
-    discount: "75%",
-    imgSrc: e,
-    label: "ORGANIC",
-  },
-  {
-    title: "Great Value Rising Crust Frozen Pizza, Supreme",
-    price: "$8.99",
-    oldPrice: "$9.89",
-    discount: "11%",
-    imgSrc: f,
-    label: "COLD SALE",
-  },
-  {
-    title: "Simply Orange Pulp Free Juice – 52 fl oz",
-    price: "$2.45",
-    oldPrice: "$4.13",
-    discount: "41%",
-    imgSrc: g,
-    label: "COLD SALE",
-  },
-  {
-    title: "California Pizza Kitchen Margherita, Crispy Thin Crust",
-    price: "$11.77",
-    oldPrice: "$14.77",
-    discount: "21%",
-    imgSrc: h,
-    label: "COLD SALE",
-  },
-  {
-    title: "Cantaloupe Melon Fresh Organic Cut",
-    price: "$1.25",
-    oldPrice: "$2.88",
-    discount: "59%",
-    imgSrc: i,
-    label: "ORGANIC",
-  },
-  {
-    title: "Angel Soft Toilet Paper, 9 Mega Rolls",
-    price: "$14.12",
-    oldPrice: "$17.12",
-    discount: "18%",
-    imgSrc: j,
-    label: "ORGANIC",
-  },
-];
 
-const promoData = [
-  {
-    title: "Provides you experienced quality products",
-    subtitle: "Feed your family the best",
-    buttonText: "Shop Now",
-    imgSrc: k,
-  },
-  {
-    title: "Shopping with us for better quality and the best price",
-    subtitle: "Only this week. Don’t miss...",
-    buttonText: "Shop Now",
-    imgSrc: l,
-  },
-  {
-    title: "Get the best quality products at the lowest prices",
-    subtitle: "A different kind of grocery store",
-    buttonText: "Shop Now",
-    imgSrc: m,
-  },
-  {
-    title: "Where you get all favorite brands under one roof",
-    subtitle: "Only this week. Don’t miss...",
-    buttonText: "Shop Now",
-    imgSrc: n,
-  },
-];
 
 const NewArraival = forwardRef((props, ref) => {
-  
+ 
   // const newArrivalsRef = useRef(null);
+  const searchResult = useContext(SearchContext);
+  
+  // console.log(searchResult)
+
+  if (!searchResult || searchResult.length === 0) {
+    return <p>Loading new arrivals...</p>; 
+  }
+
   return (
     <div  ref={ref}>
       <div style={{ display: "flex", gap: "10px" }}>
@@ -103,9 +36,9 @@ const NewArraival = forwardRef((props, ref) => {
         </p>
       </div>
       <div style={{ display: "flex", gap: "0px", overflowX: "auto", fontSize: "14px" }}>
-        {products.map((product, index) => (
+        {searchResult?.slice(0, 6).map((product, id) => (
           <div
-            key={index}
+            key={id}
             style={{
               border: "1px solid #eee",
               borderRadius: "10px",
@@ -227,3 +160,81 @@ const NewArraival = forwardRef((props, ref) => {
 );
 
 export default NewArraival;
+
+const products = [
+  {
+    title: "100 Percent Apple Juice – 64 fl oz Bottle",
+    price: "$0.50",
+    oldPrice: "$1.98",
+    discount: "75%",
+    imgSrc: e,
+    label: "ORGANIC",
+  },
+  {
+    title: "Great Value Rising Crust Frozen Pizza, Supreme",
+    price: "$8.99",
+    oldPrice: "$9.89",
+    discount: "11%",
+    imgSrc: f,
+    label: "COLD SALE",
+  },
+  {
+    title: "Simply Orange Pulp Free Juice – 52 fl oz",
+    price: "$2.45",
+    oldPrice: "$4.13",
+    discount: "41%",
+    imgSrc: g,
+    label: "COLD SALE",
+  },
+  {
+    title: "California Pizza Kitchen Margherita, Crispy Thin Crust",
+    price: "$11.77",
+    oldPrice: "$14.77",
+    discount: "21%",
+    imgSrc: h,
+    label: "COLD SALE",
+  },
+  {
+    title: "Cantaloupe Melon Fresh Organic Cut",
+    price: "$1.25",
+    oldPrice: "$2.88",
+    discount: "59%",
+    imgSrc: i,
+    label: "ORGANIC",
+  },
+  {
+    title: "Angel Soft Toilet Paper, 9 Mega Rolls",
+    price: "$14.12",
+    oldPrice: "$17.12",
+    discount: "18%",
+    imgSrc: j,
+    label: "ORGANIC",
+  },
+];
+
+const promoData = [
+  {
+    title: "Provides you experienced quality products",
+    subtitle: "Feed your family the best",
+    buttonText: "Shop Now",
+    imgSrc: k,
+  },
+  {
+    title: "Shopping with us for better quality and the best price",
+    subtitle: "Only this week. Don’t miss...",
+    buttonText: "Shop Now",
+    imgSrc: l,
+  },
+  {
+    title: "Get the best quality products at the lowest prices",
+    subtitle: "A different kind of grocery store",
+    buttonText: "Shop Now",
+    imgSrc: m,
+  },
+  {
+    title: "Where you get all favorite brands under one roof",
+    subtitle: "Only this week. Don’t miss...",
+    buttonText: "Shop Now",
+    imgSrc: n,
+  },
+];
