@@ -12,7 +12,7 @@ const Login = () => {
   const location = useLocation();
   const from = location?.state?.from?.pathname || "/";
 
-  const handleSUbmit = (e) => {
+  const handleRegisterSUbmit = (e) => {
     e.preventDefault();
 
     const form = e.target;
@@ -72,12 +72,13 @@ const Login = () => {
       </div>
 
       {isRegister ? (
+         
         <div>
           <p>There are many advantages to creating an account: the payment process is faster, shipment tracking is possible, and much more.</p>
-          <form>
-            <input type="text" placeholder="Username *" style={inputStyle} />
-            <input type="email" placeholder="Email address *" style={inputStyle} />
-            <input type="password" placeholder="Password *" style={inputStyle} />
+          <form onSubmit={handleRegisterSUbmit}>
+            <input type="text" placeholder="Username *" name="name" style={inputStyle} />
+            <input type="email" placeholder="Email address *" name="email" style={inputStyle} />
+            <input type="password" placeholder="Password *" name="password" style={inputStyle} />
 
             <div style={{ textAlign: "left", marginTop: "10px" }}>
               <label>

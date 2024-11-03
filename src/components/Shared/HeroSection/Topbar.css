@@ -1,26 +1,49 @@
-.news-container {
-    /* position: fixed; */
-    top: 8px;
-    left: 0;
-    right: 0;
-    font-family: "Roboto", sans-serif;
-    /* box-shadow: 0 4px 8px -4px rgba(0, 0, 0, 0.3); */
+.topper-maincontainer {
+  width: 120%;
+  margin-left: -10%;
+  margin-right: -10%;
+  padding: 0;
 }
 
+.topper-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #6c4bb7;
+  padding: 0px 110px;
+  color: white;
+  font-size: 12px;
+}
+
+.topper-text {
+  font-weight: bold;
+}
+
+.topper-timer {
+  font-family: "Roboto", sans-serif;
+  font-weight: bold;
+}
+
+.news-container {
+  top: 8px;
+  left: 0;
+  right: 0;
+  font-family: "Roboto", sans-serif;
+}
 
 .news-container ul {
-    display: flex;
-    list-style: none;
-    margin: 0;
-    width: '10%';
-    animation: scroll 3s infinite linear;
+  display: flex;
+  list-style: none;
+  margin: 0;
+  width: "10%";
+  animation: scroll 3s infinite linear;
 }
 
 .news-container ul li {
-    /* white-space: nowrap; */
-    padding: 10px 0px;
-    color: white;
-    position: relative;
+  /* white-space: nowrap; */
+  padding: 10px 0px;
+  color: white;
+  position: relative;
 }
 
 /* .news-container ul li::after {
@@ -34,15 +57,69 @@
 } */
 
 .news-container ul li:last-child::after {
-    display: none;
+  display: none;
 }
 
 @keyframes scroll {
-    from {
-        transform: translateX(20%);
-    }
+  from {
+    transform: translateX(20%);
+  }
 
-    to {
-        transform: translateX(0);
-    }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.drawer {
+  display: none;
+}
+
+.top-navigation {
+  background-color: black;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+}
+
+@media (max-width: 768px) {
+  .topper-container {
+    flex-direction: column;
+    white-space: nowrap;
+  }
+
+  .top-navigation {
+    display: none;
+    /* white-space: nowrap; */
+  }
+
+  /* Show the menu toggle button */
+  .drawer {
+    /* display: block; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 10px 20px;
+    color:#333;
+  }
+
+  /* Hide the nav-links initially on mobile */
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    background-color: white;
+    padding: 10px;
+    position: absolute;
+    top: 60px;
+    width: 100%;
+    left: 0;
+  }
+
+  /* Show nav-links when active */
+  .nav-links.active {
+    display: flex;
+  }
 }
