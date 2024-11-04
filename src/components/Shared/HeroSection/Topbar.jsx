@@ -113,7 +113,7 @@ useEffect(() => {
         </div>
 
         <div className="drawer">
-     <div class="navbar-brand">Brand</div> 
+     <div class="navbar-brand"></div> 
     
     <button className="menu-toggle" onClick={handleDrawerToggle}>☰</button>
     <div className={`nav-links ${mobileOpen ? 'active' : ''}`} ref={navRef}>

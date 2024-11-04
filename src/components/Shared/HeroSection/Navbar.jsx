@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import "./Navbar";
+import "./Navbar.css";
 import logo from "../../../assets/Group 70.png";
 import location from "../../../assets/Link.png";
 import Link1 from "../../../assets/Link1.png";
@@ -37,73 +37,50 @@ const Navbar = ({ onChecked }) => {
     
     <div>
       <div
-        style={{
-          display: "flex",
-          alignItems: "center",
-          gap: "15px",
-          marginTop: "20px",
-          border: "1px solid #E5E7EB",
-          padding: "15px",
-        }}
+        className="main-navbar"
       >
+        <div className="logo-location">
         {/* Logo */}
         <div>
           <img
             src={logo}
             alt="Logo"
-            style={{ width: "154px", height: "38.63px" }}
+            className="navbar-logo"
           />
         </div>
 
         {/* Location */}
-        <div style={{ display: "flex", alignItems: "center", gap: "5px" }}>
+        <div className="location-icon">
           <img src={location} alt="location" style={{ height: "26px" }} />
           <div style={{ textAlign: "center", fontSize: "11px" }}>
             Deliver to <br />
             <span style={{ fontWeight: "bold" }}>all</span>
           </div>
         </div>
+        </div>
 
         {/* Search Bar */}
         <div
           className="search-bar"
-          style={{ position: "relative", flex: "1", marginRight: "20px" }}
         >
           <input
              type="text"
              value={searchText} 
              onChange={(e) => setSearchText(e.target.value)}
             placeholder="Search for products, categories or brands..."
-            style={{
-              padding: "10px",
-              width: "100%",
-              borderRadius: "5px",
-              border: "1px solid #ececec",
-            }}
+           className="search-input"
           />
           <button
             type="button"
             onClick={handleSearchClick}
-            style={{
-              position: "absolute",
-              right: "-20px",
-              top: "2px",
-              bottom: "0",
-              padding: "10px 20px",
-              backgroundColor: "#fff",
-              color: "#333",
-              border: "none",
-              borderRadius: "0 5px 5px 0",
-              cursor: "pointer",
-              height: "10px",
-            }}
+            className="search-icon"
           >
             <i className="fa-solid fa-magnifying-glass"></i>
           </button>
         </div>
 
         {/* Icons and Sign In */}
-        <div style={{ display: "flex", alignItems: "center", gap: "15px" }}>
+        <div className="icon-signin">
           <div>
             <img src={Link1} alt="link" style={{ height: "15px" }} />
           </div>
